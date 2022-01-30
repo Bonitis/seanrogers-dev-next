@@ -39,12 +39,13 @@ const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
                 <div className="flex border-t-1 border-slate-500 pt-2">
                     <StackLogos logos={project.logos} size={36} />
                 </div>
-                <div className="m-8 h-[32rem] w-full relative">
+                <div className="m-8 h-48 md:h-[28rem] lg:h-[32rem] w-full relative">
                     <Image
                         src={`/assets/screenshots/${project.thumbnail}.png`}
                         alt={project.thumbnail}
                         layout="fill"
                         objectFit="contain"
+                        priority
                     />
                 </div>
                 <hr className="border-t-1 mb-8 w-full border-solid border-slate-500" />

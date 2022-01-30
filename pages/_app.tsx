@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </button>
       </nav>
       <Component {...pageProps} />
-      <footer className="dark:text-white text-slate-800 w-10/12 mx-auto mt-16 py-12">
+      <footer className="dark:text-white text-slate-800 w-10/12 max-w-5xl mx-auto mt-16 py-12">
         <div className="md:p-0 flex flex-col md:flex-row justify-between items-center">
           <div>&copy;{` ${new Date().getFullYear()} Sean Rogers `}</div>
           <div className="flex">
