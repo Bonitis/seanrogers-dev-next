@@ -60,14 +60,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className="md:p-0 flex flex-col md:flex-row justify-between items-center">
           <div>&copy;{` ${new Date().getFullYear()} Sean Rogers `}</div>
           <div className="flex">
-            <a href="https://github.com/Bonitis" aria-label="@bonitis on github" target="_blank" className="m-2 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
-              <img src={theme === Theme.LIGHT ? "/assets/social/github.png" : "/assets/social/github-light.png"} height="32px" width="32px" />
+            <a href="https://github.com/Bonitis" aria-label="@bonitis on github" target="_blank" rel="noreferrer" className="m-2 h-10 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
+              <Image src={theme === Theme.LIGHT ? "/assets/social/github.png" : "/assets/social/github-light.png"} alt="github-logo" height="32px" width="32px" />
             </a>
-            <a href="https://www.linkedin.com/in/smrogers/" aria-label="Sean Rogers linkedin profile" target="_blank" className="m-2 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
-              <img src="/assets/social/linkedin.png" height="32px" width="32px" />
+            <a href="https://www.linkedin.com/in/smrogers/" aria-label="Sean Rogers linkedin profile" target="_blank" rel="noreferrer" className="m-2 h-10 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
+              <Image src="/assets/social/linkedin.png" alt="linkedin-logo" height="32px" width="32px" />
             </a>
-            <a href="https://twitter.com/helloseann" aria-label="@helloseann on twitter" target="_blank" className="m-2 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
-              <img src="/assets/social/twitter.png" height="32px" width="32px" />
+            <a href="https://twitter.com/helloseann" aria-label="@helloseann on twitter" target="_blank" rel="noreferrer" className="m-2 h-10 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
+              <Image src="/assets/social/twitter.png" alt="twitter-logo" height="32px" width="32px" />
             </a>
           </div>
         </div>

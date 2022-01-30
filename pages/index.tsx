@@ -37,7 +37,7 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
 
       <div className="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-white mx-auto mb-16 py-16">
         <div className="w-10/12 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center">
-          <Image src="/assets/avatar.png" width={200} height={200} className="rounded-full" />
+          <Image src="/assets/avatar.png" alt="avatar" width={200} height={200} className="rounded-full" />
           <div className="ml-0 md:ml-6 mt-3 md:mt-0">
             <h1 className="mb-4 text-3xl md:text-5xl font-light">Hello, I am Sean 👋</h1>
             <p className="text-indigo-800 dark:text-indigo-200 text-2xl font-light">I am a self-taught software developer, ex-founder, and currently engineering at Ekos.</p>
