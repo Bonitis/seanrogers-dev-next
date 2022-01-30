@@ -19,11 +19,23 @@ const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
             <Head>
                 <title>{project.title}</title>
                 <meta name="description" content={project.description} />
+                <meta name="keywords" content={project.stack.split(' | ').join(',')} />
+                <meta property="og:url" content="https://seanrogers.dev/" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Sean Rogers" />
+                <meta property="og:description" content={project.description} />
+                <meta property="og:image" content={`/assets/screenshots/${project.thumbnail}.png`} />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta property="twitter:domain" content="seanrogers.dev" />
+                <meta property="twitter:url" content="https://seanrogers.dev/" />
+                <meta name="twitter:title" content="Sean Rogers" />
+                <meta name="twitter:description" content={project.description} />
+                <meta name="twitter:image" content={`/assets/screenshots/${project.thumbnail}.png`}></meta>        
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <div className="w-10/12 max-w-5xl mx-auto mb-8 flex flex-col items-center justify-between py-4 dark:text-white text-slate-800">
-                <h1 className="text-indigo-800 dark:text-white text-7xl mb-2 font-bold">{project.title}</h1>
+                <h1 className="text-indigo-800 dark:text-white text-5xl md:text-7xl mb-2 font-bold">{project.title}</h1>
                 <div className="flex border-t-1 border-slate-500 pt-2">
                     <StackLogos logos={project.logos} size={36} />
                 </div>

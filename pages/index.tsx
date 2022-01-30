@@ -13,16 +13,29 @@ const sortProjects = (a: ProjectPage, b: ProjectPage) => {
   return (a.sequence || 0) - (b.sequence || 0);
 }
 
+const DESCRIPTION = "Software engineer and ex-founder with expertise in javascript/typescript, react, and building micro-service architecture.";
+
 const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Sean Rogers</title>
-        <meta name="description" content="Software engineer and ex-founder with expertise in javascript/typescript, react, and building micro-service architecture." />
+        <meta name="description" content={DESCRIPTION} />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:url" content="https://seanrogers.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Sean Rogers" />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:image" content="https://secure.gravatar.com/avatar/1acea13a11e3f681ebb42270cd133556" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="seanrogers.dev" />
+        <meta property="twitter:url" content="https://seanrogers.dev/" />
+        <meta name="twitter:title" content="Sean Rogers" />
+        <meta name="twitter:description" content={DESCRIPTION} />
+        <meta name="twitter:image" content="https://secure.gravatar.com/avatar/1acea13a11e3f681ebb42270cd133556"></meta>
       </Head>
 
-      <div className="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-white mx-auto mb-16 w-full py-16">
+      <div className="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-white mx-auto mb-16 py-16">
         <div className="w-10/12 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center">
           <Image src="/assets/avatar.png" width={200} height={200} className="rounded-full" />
           <div className="ml-0 md:ml-6 mt-3 md:mt-0">
@@ -32,11 +45,11 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
         </div>
       </div>
       <div className="w-full md:w-10/12 mx-auto">
-        <h2 className="text-center w-full text-2xl font-light mb-8 mt-2 dark:text-white">Projects</h2>
+        <h2 className="text-center text-2xl font-light mb-8 mt-2 dark:text-white">Projects</h2>
           <div className="max-w-5xl grid grid-cols-1 gap-24 mx-8 md:mx-auto">
             {projects.sort(sortProjects).map(project => (
               <div key={project.slug} className="flex flex-col lg:flex-row rounded">
-                <div className="flex flex-col lg:h-72 mb-8 lg:mb-0 lg:mr-16 w-full lg:w-4/12">
+                <div className="flex flex-col lg:h-72 mb-8 lg:mb-0 lg:mr-16 lg:w-4/12">
                   <div>
                     <h3 className="text-slate-700 dark:text-white font-bold text-3xl pb-1">{project.title}</h3>
                     <p className="mt-4 font-light text-slate-800 dark:text-white">{project.description}</p>
@@ -44,8 +57,8 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
                       <StackLogos logos={project.logos} size={30} />
                     </div>
                   </div>
-                  <Link href={`projects/${project.slug}`}>
-                    <a className="text-indigo-800 dark:text-white hover:text-white dark:hover:text-indigo-800 hover:bg-indigo-800 dark:hover:bg-white cursor-pointer font-bold text-lg border-4 border-solid border-indigo-800 dark:border-white rounded-lg flex justify-center items-center mt-4 py-2 px-16 w-fit transition-colors">
+                  <Link href={`/projects/${project.slug}`}>
+                    <a className="text-indigo-800 dark:text-white hover:text-white dark:hover:text-indigo-800 hover:bg-indigo-800 dark:hover:bg-white cursor-pointer font-bold text-lg border-4 border-solid border-indigo-800 dark:border-white rounded-lg flex justify-center items-center mt-4 py-2 px-16 w-full md:w-fit transition-colors">
                       Details
                     </a>
                   </Link>
@@ -63,7 +76,7 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
             ))}
           </div>
         </div>
-    </div>
+    </>
   )
 }
 

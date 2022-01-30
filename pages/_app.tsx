@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react';
 
 
@@ -55,10 +56,20 @@ function MyApp({ Component, pageProps }: AppProps) {
         </button>
       </nav>
       <Component {...pageProps} />
-      <footer className="dark:text-white text-slate-800 w-full mt-16 py-12">
-        <div className="md:p-0 w-full md:w-10/12 flex flex-col md:flex-row justify-between max-w-5xl mx-8 md:mx-auto">
+      <footer className="dark:text-white text-slate-800 w-10/12 mx-auto mt-16 py-12">
+        <div className="md:p-0 flex flex-col md:flex-row justify-between items-center">
           <div>&copy;{` ${new Date().getFullYear()} Sean Rogers `}</div>
-          <div>Social Links</div>
+          <div className="flex">
+            <a href="https://github.com/Bonitis" aria-label="@bonitis on github" target="_blank" className="m-2 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
+              <img src={theme === Theme.LIGHT ? "/assets/social/github.png" : "/assets/social/github-light.png"} height="32px" width="32px" />
+            </a>
+            <a href="https://www.linkedin.com/in/smrogers/" aria-label="Sean Rogers linkedin profile" target="_blank" className="m-2 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
+              <img src="/assets/social/linkedin.png" height="32px" width="32px" />
+            </a>
+            <a href="https://twitter.com/helloseann" aria-label="@helloseann on twitter" target="_blank" className="m-2 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
+              <img src="/assets/social/twitter.png" height="32px" width="32px" />
+            </a>
+          </div>
         </div>
       </footer>
     </div>
