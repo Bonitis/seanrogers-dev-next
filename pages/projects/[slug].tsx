@@ -24,13 +24,13 @@ const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={`${project.title} - Sean Rogers dev portfolio`} />
                 <meta property="og:description" content={project.description} />
-                <meta property="og:image" content={`/assets/screenshots/${project.thumbnail}.png`} />
+                <meta property="og:image" content={`https://seanrogers.dev/assets/screenshots/${project.thumbnail}.png`} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:domain" content="seanrogers.dev" />
                 <meta property="twitter:url" content="https://seanrogers.dev/" />
                 <meta name="twitter:title" content={`${project.title} - Sean Rogers dev portfolio`} />
                 <meta name="twitter:description" content={project.description} />
-                <meta name="twitter:image" content={`/assets/screenshots/${project.thumbnail}.png`}></meta>        
+                <meta name="twitter:image" content={`https://seanrogers.dev/assets/screenshots/${project.thumbnail}.png`}></meta>        
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
