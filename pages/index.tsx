@@ -29,13 +29,13 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Sean Rogers" />
         <meta property="og:description" content={DESCRIPTION} />
-        <meta property="og:image" content="https://secure.gravatar.com/avatar/1acea13a11e3f681ebb42270cd133556" />
+        <meta property="og:image" content="https://seanrogers.dev/assets/avatar.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="seanrogers.dev" />
         <meta property="twitter:url" content="https://seanrogers.dev/" />
         <meta name="twitter:title" content="Sean Rogers" />
         <meta name="twitter:description" content={DESCRIPTION} />
-        <meta name="twitter:image" content="https://secure.gravatar.com/avatar/1acea13a11e3f681ebb42270cd133556"></meta>
+        <meta name="twitter:image" content="https://seanrogers.dev/assets/avatar.png"></meta>
       </Head>
 
       <div className="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-white mx-auto mb-16 py-16">
