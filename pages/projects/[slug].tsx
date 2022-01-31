@@ -65,7 +65,7 @@ const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
                 </div>
                 <div>
                     {project.gallery?.map((path) => (
-                        <div className="bg-black bg-opacity-80 hidden fixed z-20 target:items-center target:bottom-0 target:top-0 target:left-0 target:right-0 target:flex target:justify-center target:overflow-auto" id={path}>
+                        <div key={`lightbox-${path}`} className="bg-black bg-opacity-80 hidden fixed z-20 target:items-center target:bottom-0 target:top-0 target:left-0 target:right-0 target:flex target:justify-center target:overflow-auto" id={path}>
                             <a href="#_" className="fixed text-3xl text-white right-0 top-0 z-30 font-bold p-2">&times;</a>
                             <div className="w-4/5 block m-auto">
                                 <Image
