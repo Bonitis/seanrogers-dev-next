@@ -14,7 +14,9 @@ export enum Theme {
 export const updateTheme = (theme: string) => {
   localStorage.setItem(THEME_KEY, theme);
   const htmlEl = document.documentElement;
-  htmlEl.className = theme;
+  if (htmlEl) {
+    htmlEl.className = theme;
+  }
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
