@@ -1,5 +1,6 @@
 ---
 title: Push the Pace
+slug: push-the-pace
 description: Push the Pace is a real-time group fitness analytics platform with in-class leaderboard.
 stack: javascript | node | react | redux | firebase | raspberrypi | bluetooth
 thumbnail: push-the-pace-class

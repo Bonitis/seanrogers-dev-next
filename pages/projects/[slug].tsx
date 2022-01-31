@@ -16,9 +16,10 @@ const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
     return (
         <>
             <Head>
-                <title>{project.title}</title>
+                <title>{`${project.title} - Sean Rogers dev portfolio`}</title>
                 <meta name="description" content={project.description} />
                 <meta name="keywords" content={project.stack.split(' | ').join(',')} />
+                <link rel="canonical" href={`https://seanrogers.dev/projects/${project.slug}`} />
                 <meta property="og:url" content="https://seanrogers.dev/" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="Sean Rogers" />

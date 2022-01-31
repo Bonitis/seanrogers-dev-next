@@ -1,5 +1,6 @@
 ---
 title: smpl
+slug: smpl
 description: smpl is a coworking space management platform that provides everything a coworking owner needs to run their business.
 stack: javascript | node | react | redux | materialui | firebase | stripe | zapier
 thumbnail: smpl-members

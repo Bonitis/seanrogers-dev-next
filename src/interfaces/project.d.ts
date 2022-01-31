@@ -6,7 +6,8 @@ export interface Project {
     stack: string;
     logos: string[];
     gallery?: string;
-    sequence?: number
+    sequence?: number;
+    slug: string;
   };
   
   export interface ProjectMarkdownAttributes extends Omit<Project, 'logos'> {

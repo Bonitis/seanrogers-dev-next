@@ -1,5 +1,6 @@
 ---
 title: The Wed Clique
+slug: the-wed-clique
 description: The Wed Clique is a platform for discovering and hiring wedding vendors.
 stack: typescript | node | react | sass | graphql | postgres
 thumbnail: the-wed-clique-home

@@ -1,5 +1,6 @@
 ---
 title: Ekos Order Hub
+slug: ekos-order-hub
 description: Ekos Order Hub is a digital portal for your distributors and customer accounts to see available inventory and enter and manage orders.
 stack: typescript | react | nextjs | styledcomponents | dotnet | azure
 thumbnail: ekos-order-hub-products

@@ -14,15 +14,17 @@ const sortProjects = (a: ProjectPage, b: ProjectPage) => {
   return (a.sequence || 0) - (b.sequence || 0);
 }
 
-const DESCRIPTION = "Software engineer and ex-founder with expertise in javascript/typescript, react, and building micro-service architecture.";
+const DESCRIPTION = "A self-taught software engineer and ex-founder who is currently building products at Ekos.";
 
 const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
   return (
     <>
       <Head>
-        <title>Sean Rogers</title>
+        <title>Sean Rogers - software engineer and ex-founder</title>
         <meta name="description" content={DESCRIPTION} />
+        <meta name="keywords" content="Javascript,Typescript,React,Redux,Node,Nextjs,Graphql,Firebase,Stripe,Vercel,Dotnet,Azure,AWS,Lambda" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://seanrogers.dev" />
         <meta property="og:url" content="https://seanrogers.dev/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Sean Rogers" />
@@ -41,7 +43,7 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
           <Image src={avatar} alt="avatar" width={200} height={200} className="rounded-full" placeholder="blur" />
           <div className="ml-0 md:ml-6 mt-3 md:mt-0">
             <h1 className="mb-4 text-3xl md:text-5xl font-light">Hello, I am Sean 👋</h1>
-            <p className="text-indigo-800 dark:text-indigo-200 text-2xl font-light">I am a self-taught software developer, ex-founder, and currently engineering at Ekos.</p>
+            <p className="text-indigo-800 dark:text-indigo-200 text-2xl font-light">{DESCRIPTION}</p>
           </div>
         </div>
       </div>
