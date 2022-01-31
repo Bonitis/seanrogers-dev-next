@@ -6,7 +6,6 @@ import path from 'path'
 import parseFrontMatter from "front-matter";
 import { marked } from "marked";
 import StackLogos from '../../src/components/StackLogos'
-import Gallery from '../../src/components/Gallery'
 import { ProjectMarkdownAttributes, ProjectPage } from "../../src/interfaces/project"
 
 export const getStackLogos = (stack: string): string[] => {
@@ -50,7 +49,37 @@ const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
                 </div>
                 <hr className="border-t-1 mb-8 w-full border-solid border-slate-500" />
                 <div className="md-body" dangerouslySetInnerHTML={{ __html: project.html }} />
-                <Gallery gallery={project.gallery} />
+                <div className="grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 w-full xl:w-10/12 xl:max-w-5xl">
+                    {project.gallery?.map((path) => (
+                        <a href={`#${path}`} key={path} className="p-2 bg-gray-200 rounded hover:drop-shadow-lg cursor-zoom-in">
+                            <Image
+                                src={`/assets/screenshots/${path}.png`}
+                                alt={path}
+                                height={400}
+                                width={600}
+                                layout="responsive"
+                                objectFit="cover"
+                            />
+                        </a>
+                    ))}
+                </div>
+                <div>
+                    {project.gallery?.map((path) => (
+                        <div className="bg-black bg-opacity-80 hidden fixed z-20 target:items-center target:bottom-0 target:top-0 target:left-0 target:right-0 target:flex target:justify-center target:overflow-auto" id={path}>
+                            <a href="#_" className="fixed text-3xl text-white right-0 top-0 z-30 font-bold p-2">&times;</a>
+                            <div className="w-4/5 block m-auto">
+                                <Image
+                                    src={`/assets/screenshots/${path}.png`}
+                                    alt={path}
+                                    height={400}
+                                    width={600}
+                                    layout="responsive"
+                                    objectFit="contain"
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     )
@@ -71,7 +100,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     // markdown transform
     const { attributes, body } = parseFrontMatter<ProjectMarkdownAttributes>(fileContents.toString());
     const html = marked(body);
-    const gallery = attributes.gallery?.split(', ').map((name) => `/assets/screenshots/${name}.png`);
+    const gallery = attributes.gallery?.split(', ');
     const project = { html, logos: getStackLogos(attributes.stack), ...attributes, gallery };
 
     return {

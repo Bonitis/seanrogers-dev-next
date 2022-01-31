@@ -8,6 +8,7 @@ import { promises as fs } from 'fs'
 import StackLogos from '../src/components/StackLogos'
 import { ProjectMarkdownAttributes, ProjectPage } from '../src/interfaces/project'
 import { getStackLogos } from './projects/[slug]'
+import avatar from '../public/assets/avatar.png'
 
 const sortProjects = (a: ProjectPage, b: ProjectPage) => {
   return (a.sequence || 0) - (b.sequence || 0);
@@ -37,7 +38,7 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
 
       <div className="bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-white mx-auto mb-16 py-16">
         <div className="w-10/12 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center">
-          <Image src="/assets/avatar.png" alt="avatar" width={200} height={200} className="rounded-full" />
+          <Image src={avatar} alt="avatar" width={200} height={200} className="rounded-full" placeholder="blur" />
           <div className="ml-0 md:ml-6 mt-3 md:mt-0">
             <h1 className="mb-4 text-3xl md:text-5xl font-light">Hello, I am Sean 👋</h1>
             <p className="text-indigo-800 dark:text-indigo-200 text-2xl font-light">I am a self-taught software developer, ex-founder, and currently engineering at Ekos.</p>
@@ -69,7 +70,8 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
                     alt={project.thumbnail}
                     width={800}
                     height={400}
-                    objectFit="contain"
+                    objectFit="cover"
+                    objectPosition="top"
                   />
                 </div>
               </div>

@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 html,
 body {
@@ -10,6 +9,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+@tailwind utilities;
 
 [data-tooltip][aria-description] {
     position: relative;
@@ -33,7 +34,7 @@ body {
 [data-tooltip][aria-description]::after {
     background-color: theme('colors.slate.600');
     border-radius: 4px;
-    color: theme('colors.custom.white');
+    color: theme('colors.white');
     content: attr(aria-description);
     font-size: 0.65rem;
     font-weight: 600;
@@ -72,7 +73,7 @@ body {
   }
 
   .md-body a {
-      color: theme('colors.custom.light-blue');
+      color: theme('colors.blue.400');
   }
 
   .md-body a:hover {
