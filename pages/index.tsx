@@ -8,7 +8,7 @@ import { promises as fs } from 'fs'
 import StackLogos from '../src/components/StackLogos'
 import { ProjectMarkdownAttributes, ProjectPage } from '../src/interfaces/project'
 import { getStackLogos } from './projects/[slug]'
-import avatar from '../public/assets/avatar.png'
+import avatar from '../public/assets/aiavatar.jpg'
 
 const sortProjects = (a: ProjectPage, b: ProjectPage) => {
   return (a.sequence || 0) - (b.sequence || 0);
