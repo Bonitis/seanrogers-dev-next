@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from 'next/link'
 import path from 'path'
 import parseFrontMatter from "front-matter";
@@ -45,14 +45,18 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
                     alt={project.thumbnail}
                     width={800}
                     height={800}
-                  />
+                    sizes="100vw"
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                 </div>
               </div>
             ))}
           </div>
         </div>
     </div>
-  )
+  );
 }
 
 export async function getServerSideProps() {
