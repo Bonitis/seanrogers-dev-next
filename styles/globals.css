@@ -12,11 +12,11 @@ body {
 
 @tailwind utilities;
 
-[data-tooltip][aria-description] {
+[data-tooltip][aria-describedby] {
     position: relative;
 }
-[data-tooltip][aria-description]::before,
-[data-tooltip][aria-description]::after {
+[data-tooltip][aria-describedby]::before,
+[data-tooltip][aria-describedby]::after {
     left: 50%;
     opacity: 0;
     position: absolute;
@@ -24,18 +24,18 @@ body {
     transition: opacity 0.15s ease-in-out, visibility 0s 0.15s ease-in-out;
     visibility: hidden;
 }
-[data-tooltip][aria-description]::before {
+[data-tooltip][aria-describedby]::before {
     content: "";
     height: 0;
     transform: translateX(-50%) translateY(calc(-100% + 1px));
     width: 0;
     z-index: 1;
 }
-[data-tooltip][aria-description]::after {
+[data-tooltip][aria-describedby]::after {
     background-color: theme('colors.slate.600');
     border-radius: 4px;
     color: theme('colors.white');
-    content: attr(aria-description);
+    content: attr(aria-describedby);
     font-size: 0.65rem;
     font-weight: 600;
     padding: 4px 8px;
@@ -43,22 +43,22 @@ body {
     white-space: nowrap;
     z-index: 1;
 }
-[data-tooltip][aria-description]:hover::before,
-[data-tooltip][aria-description]:hover::after,
-[data-tooltip][aria-description]:focus::before,
-[data-tooltip][aria-description]:focus::after {
+[data-tooltip][aria-describedby]:hover::before,
+[data-tooltip][aria-describedby]:hover::after,
+[data-tooltip][aria-describedby]:focus::before,
+[data-tooltip][aria-describedby]:focus::after {
     opacity: 1;
     transition: opacity 0.15s ease-in-out;
     visibility: visible;
 }
-[data-tooltip][aria-description][data-tooltip-position=top]::before,
-[data-tooltip][aria-description][data-tooltip-position=top]::after {
+[data-tooltip][aria-describedby][data-tooltip-position=top]::before,
+[data-tooltip][aria-describedby][data-tooltip-position=top]::after {
     bottom: calc(100% + 0.4rem);
     top: auto;
   }
   @media (hover: none) {
-    [data-tooltip][aria-description]::before,
-    [data-tooltip][aria-description]::after {
+    [data-tooltip][aria-describedby]::before,
+    [data-tooltip][aria-describedby]::after {
       content: none;
     }
   }
