@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 const StackLogos: React.FC<{ logos?: string[], size: number }> = ({ logos, size }) => {
     if (!logos || logos.length < 1) return null;

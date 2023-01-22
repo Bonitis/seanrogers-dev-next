@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import { useState, useEffect, useCallback } from 'react';
 
 
@@ -61,13 +61,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <div>&copy;{` ${new Date().getFullYear()} Sean Rogers `}</div>
           <div className="flex">
             <a href="https://github.com/Bonitis" aria-label="@bonitis on github" target="_blank" rel="noreferrer" className="m-2 h-10 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
-              <Image src={theme === Theme.LIGHT ? "/assets/social/github.png" : "/assets/social/github-light.png"} alt="github-logo" height="32px" width="32px" />
+              <Image src={theme === Theme.LIGHT ? "/assets/social/github.png" : "/assets/social/github-light.png"} alt="github-logo" height={32} width={32} />
             </a>
             <a href="https://www.linkedin.com/in/smrogers/" aria-label="Sean Rogers linkedin profile" target="_blank" rel="noreferrer" className="m-2 h-10 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
-              <Image src="/assets/social/linkedin.png" alt="linkedin-logo" height="32px" width="32px" />
+              <Image src="/assets/social/linkedin.png" alt="linkedin-logo" height={32} width={32} />
             </a>
             <a href="https://twitter.com/helloseann" aria-label="@helloseann on twitter" target="_blank" rel="noreferrer" className="m-2 h-10 p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
-              <Image src="/assets/social/twitter.png" alt="twitter-logo" height="32px" width="32px" />
+              <Image src="/assets/social/twitter.png" alt="twitter-logo" height={32} width={32} />
             </a>
           </div>
         </div>

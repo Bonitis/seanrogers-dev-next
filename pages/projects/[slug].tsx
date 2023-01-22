@@ -1,6 +1,6 @@
 import { NextPage, GetServerSidePropsContext } from "next"
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import { promises as fs } from 'fs'
 import path from 'path'
 import parseFrontMatter from "front-matter";
