@@ -37,10 +37,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="dark:bg-slate-900 bg-white transition-colors relative">
       <nav className="w-10/12 max-w-5xl h-16 mx-auto mb-8 flex items-center justify-between py-4 dark:text-white text-slate-800">
-        <Link href="/" passHref>
-          <a className="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
-            Home
-          </a>
+        <Link href="/" className="p-1 rounded hover:bg-slate-200 dark:hover:bg-slate-700">
+          Home
         </Link>
         <button
           title={theme === Theme.LIGHT ? 'dark mode' : 'light mode'}

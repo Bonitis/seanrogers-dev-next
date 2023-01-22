@@ -60,10 +60,8 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
                       <StackLogos logos={project.logos} size={30} />
                     </div>
                   </div>
-                  <Link href={`/projects/${project.slug}`}>
-                    <a className="text-indigo-800 dark:text-white hover:text-white dark:hover:text-indigo-800 hover:bg-indigo-800 dark:hover:bg-white cursor-pointer font-bold text-lg border-4 border-solid border-indigo-800 dark:border-white rounded-lg flex justify-center items-center mt-4 py-2 px-16 w-full md:w-fit transition-colors">
-                      Details
-                    </a>
+                  <Link href={`/projects/${project.slug}`} className="text-indigo-800 dark:text-white hover:text-white dark:hover:text-indigo-800 hover:bg-indigo-800 dark:hover:bg-white cursor-pointer font-bold text-lg border-4 border-solid border-indigo-800 dark:border-white rounded-lg flex justify-center items-center mt-4 py-2 px-16 w-full md:w-fit transition-colors">
+                    Details
                   </Link>
                 </div>
                 <div className="rounded-lg bg-slate-100 dark:bg-slate-700 p-4 lg:pb-0 lg:pt-8 lg:px-8 w-full lg:w-8/12 h-36 sm:h-60 md:h-80 lg:h-72 overflow-hidden">
