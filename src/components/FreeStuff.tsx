@@ -25,7 +25,7 @@ const FreeStuff: React.FC<{
         <a
           href={url}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           className="cursor-pointer rounded-lg text-lg font-bold text-indigo-800 transition-colors hover:underline dark:text-white"
         >
           {title}

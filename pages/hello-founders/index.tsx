@@ -66,7 +66,7 @@ const HelloFounders: NextPage<{}> = () => {
             <a
               href="https://www.techstars.com/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               style={{ color: '#31A955' }}
               className="hover:underline"
             >
@@ -77,21 +77,21 @@ const HelloFounders: NextPage<{}> = () => {
             information.
           </p>
           <p className="mb-2 font-light dark:text-white">
-            This is a list of the boring stuff. The things you wouldn't think of
-            on your own, but wish you had. It isn't about product-market fit how
+            This is a list of the boring stuff. The things you wouldn&apos;t think of
+            on your own, but wish you had. It isn&apos;t about product-market fit how
             to do pricing, or building scalable tech. There are smarter people
             than me putting out content about those topics all over the place
             and I encourage you to seek them out. Instead, this is about
-            surfacing the little details that will make it feel like you're a
-            serial entrepreneur even though you have no idea what you're doing.
+            surfacing the little details that will make it feel like you&apos;re a
+            serial entrepreneur even though you have no idea what you&apos;re doing.
           </p>
           <h2 className="mt-8 text-2xl font-light dark:text-white">
             Free Stuff
           </h2>
           <p className="mb-2 font-light dark:text-white">
             Did you know that all the big tech companies have programs to give
-            you free stuff in the hopes that your startup takes off and you'll
-            be locked in to their services? Let's exploit that. Here are some of
+            you free stuff in the hopes that your startup takes off and you&apos;ll
+            be locked in to their services? Let&apos;s exploit that. Here are some of
             those programs that you can use to get resources or credits so that
             you can survive a little longer without giving away all your equity.
           </p>
@@ -130,7 +130,7 @@ const HelloFounders: NextPage<{}> = () => {
             />
           </div>
           <h2 className="mt-8 text-2xl font-light dark:text-white">
-            Know What You're Talking About
+            Know What You&apos;re Talking About
           </h2>
           <p className="mb-2 font-light dark:text-white">
             There is a long list of terrifying first-time situations when you
@@ -143,7 +143,7 @@ const HelloFounders: NextPage<{}> = () => {
               <a
                 href="https://www.startuprocket.com/articles/startup-financial-modeling-part-1-what-is-a-financial-model"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="cursor-pointer rounded-lg text-lg font-bold text-indigo-800 transition-colors hover:underline dark:text-white"
               >
                 Build a Financial Model
@@ -158,7 +158,7 @@ const HelloFounders: NextPage<{}> = () => {
               <a
                 href="https://www.venturedeals.com/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="cursor-pointer rounded-lg text-lg font-bold text-indigo-800 transition-colors hover:underline dark:text-white"
               >
                 Venture Deals
@@ -174,14 +174,14 @@ const HelloFounders: NextPage<{}> = () => {
               <a
                 href="https://www.ycombinator.com/sales_agreement"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="cursor-pointer rounded-lg text-lg font-bold text-indigo-800 transition-colors hover:underline dark:text-white"
               >
                 Y-Combinator Sales Agreement Template
               </a>
               <p className="mt-2 font-light text-slate-800 dark:text-white">
                 If you are building a B2B company, you will need to contracts and outline terms for your customers. This can be a daunting experience
-                if you have never done anything like that before. Use this template to get started. It won't be your last, and you'll modify it immediately,
+                if you have never done anything like that before. Use this template to get started. It won&apos;t be your last, and you&apos;ll modify it immediately,
                 but will give you a huge head start.
               </p>
             </div>
@@ -193,7 +193,7 @@ const HelloFounders: NextPage<{}> = () => {
               <a
                 href="https://www.law.upenn.edu/clinic/entrepreneurship/startupkit/founders-agreement.pdf"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="cursor-pointer rounded-lg text-lg font-bold text-indigo-800 transition-colors hover:underline dark:text-white"
               >
                 UPenn Founders Agreement Template
