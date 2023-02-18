@@ -16,7 +16,7 @@ const HelloFounders: NextPage<{}> = () => {
           content="Startup,venture capital,fundraising,early stage company"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://seanrogers.dev/" />
+        <link rel="canonical" href="https://seanrogers.dev/hello-founders" />
         <meta property="og:url" content="https://seanrogers.dev/hello-founders" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Survive your first startup" />
