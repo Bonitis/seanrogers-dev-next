@@ -19,6 +19,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     <priority>1.00</priority>
 </url>
 <url>
+    <loc>https://seanrogers.dev/hello-founders</loc>
+    <lastmod>2023-02-23T00:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+</url>
+<url>
     <loc>https://seanrogers.dev/projects/smpl</loc>
     <lastmod>2022-02-06T16:52:08+00:00</lastmod>
     <priority>0.80</priority>
