@@ -19,9 +19,10 @@ const FreeStuff: React.FC<{
           height: 'auto',
           objectFit: 'contain',
           objectPosition: 'top',
+          marginRight: '8px',
         }}
       />
-      <div className="ml-4">
+      <div className="flex flex-col">
         <a
           href={url}
           target="_blank"

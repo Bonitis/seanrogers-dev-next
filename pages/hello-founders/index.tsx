@@ -9,7 +9,9 @@ const HelloFounders: NextPage<{}> = () => {
   return (
     <div>
       <Head>
-        <title>Helping you survive starting your first company or joining a startup</title>
+        <title>
+          Helping you survive starting your first company or joining a startup
+        </title>
         <meta name="description" content={DESCRIPTION} />
         <meta
           name="keywords"
@@ -17,7 +19,10 @@ const HelloFounders: NextPage<{}> = () => {
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://seanrogers.dev/hello-founders" />
-        <meta property="og:url" content="https://seanrogers.dev/hello-founders" />
+        <meta
+          property="og:url"
+          content="https://seanrogers.dev/hello-founders"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Survive your first startup" />
         <meta property="og:description" content={DESCRIPTION} />
@@ -27,7 +32,10 @@ const HelloFounders: NextPage<{}> = () => {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="seanrogers.dev" />
-        <meta property="twitter:url" content="https://seanrogers.dev/hello-founders" />
+        <meta
+          property="twitter:url"
+          content="https://seanrogers.dev/hello-founders"
+        />
         <meta name="twitter:title" content="Survive your first startup" />
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta
@@ -77,23 +85,25 @@ const HelloFounders: NextPage<{}> = () => {
             information.
           </p>
           <p className="mb-2 font-light dark:text-white">
-            This is a list of the boring stuff. The things you wouldn&apos;t think of
-            on your own, but wish you had. It isn&apos;t about product-market fit how
-            to do pricing, or building scalable tech. There are smarter people
-            than me putting out content about those topics all over the place
-            and I encourage you to seek them out. Instead, this is about
-            surfacing the little details that will make it feel like you&apos;re a
-            serial entrepreneur even though you have no idea what you&apos;re doing.
+            This is a list of the boring stuff. The things you wouldn&apos;t
+            think of on your own, but wish you had. It isn&apos;t about
+            product-market fit how to do pricing, or building scalable tech.
+            There are smarter people than me putting out content about those
+            topics all over the place and I encourage you to seek them out.
+            Instead, this is about surfacing the little details that will make
+            it feel like you&apos;re a serial entrepreneur even though you have
+            no idea what you&apos;re doing.
           </p>
           <h2 className="mt-8 text-2xl font-light dark:text-white">
             Free Stuff
           </h2>
           <p className="mb-2 font-light dark:text-white">
             Did you know that all the big tech companies have programs to give
-            you free stuff in the hopes that your startup takes off and you&apos;ll
-            be locked in to their services? Let&apos;s exploit that. Here are some of
-            those programs that you can use to get resources or credits so that
-            you can survive a little longer without giving away all your equity.
+            you free stuff in the hopes that your startup takes off and
+            you&apos;ll be locked in to their services? Let&apos;s exploit that.
+            Here are some of those programs that you can use to get resources or
+            credits so that you can survive a little longer without giving away
+            all your equity.
           </p>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <FreeStuff
@@ -149,9 +159,12 @@ const HelloFounders: NextPage<{}> = () => {
                 Build a Financial Model
               </a>
               <p className="mt-2 font-light text-slate-800 dark:text-white">
-                Troy Henikoff from MATH Venture Partners put together an amazing series on building a financial model, and why it is important
-                for founders to build one from scratch. While this is an incredibly useful tool for communicating with investors, it also forces
-                you to think about all of your assumptions and gives your a framework for proving if they are correct.
+                Troy Henikoff from MATH Venture Partners put together an amazing
+                series on building a financial model, and why it is important
+                for founders to build one from scratch. While this is an
+                incredibly useful tool for communicating with investors, it also
+                forces you to think about all of your assumptions and gives your
+                a framework for proving if they are correct.
               </p>
             </div>
             <div>
@@ -164,10 +177,15 @@ const HelloFounders: NextPage<{}> = () => {
                 Venture Deals
               </a>
               <p className="mt-2 font-light text-slate-800 dark:text-white">
-                This book was written by Brad Feld, a cofounder of Techstars, and was required reading for the program. Ever since I read it I have
-                recommended it to anyone starting a company or even joining a startup. Funding a company is an entire world of new vocabulary and concepts.
-                Reading Venture Deals is the fastest way to understand the mechanics of venture funding for both founders and employees. If you are looking
-                to join a startup, this will help you ask the right questions to evaluate the equity part of your compensation.
+                This book was written by Brad Feld, a cofounder of Techstars,
+                and was required reading for the program. Ever since I read it I
+                have recommended it to anyone starting a company or even joining
+                a startup. Funding a company is an entire world of new
+                vocabulary and concepts. Reading Venture Deals is the fastest
+                way to understand the mechanics of venture funding for both
+                founders and employees. If you are looking to join a startup,
+                this will help you ask the right questions to evaluate the
+                equity part of your compensation.
               </p>
             </div>
             <div>
@@ -180,34 +198,72 @@ const HelloFounders: NextPage<{}> = () => {
                 Y-Combinator Sales Agreement Template
               </a>
               <p className="mt-2 font-light text-slate-800 dark:text-white">
-                If you are building a B2B company, you will need to contracts and outline terms for your customers. This can be a daunting experience
-                if you have never done anything like that before. Use this template to get started. It won&apos;t be your last, and you&apos;ll modify it immediately,
-                but will give you a huge head start.
+                If you are building a B2B company, you will need to contracts
+                and outline terms for your customers. This can be a daunting
+                experience if you have never done anything like that before. Use
+                this template to get started. It won&apos;t be your last, and
+                you&apos;ll modify it immediately, but will give you a huge head
+                start.
               </p>
             </div>
             <h2 className="mt-8 text-2xl font-light dark:text-white">
-            Remove Guesswork
-          </h2>
-          <div className="grid grid-cols-1 gap-4">
-          <div>
-              <a
-                href="https://www.law.upenn.edu/clinic/entrepreneurship/startupkit/founders-agreement.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer rounded-lg text-lg font-bold text-indigo-800 transition-colors hover:underline dark:text-white"
-              >
-                UPenn Founders Agreement Template
-              </a>
-              <p className="mt-2 font-light text-slate-800 dark:text-white">
-                Unless you are a solo founder, you likely have others working on this project with you. If you are not already close to those
-                people, you will be. You will spend so much time with your chosen team that they will be like family. While you may want to
-                avoid discussing negative possibilities, it is important to get ahead of disputes and disagreements that will come in the future.
-                Building a Founders or Operating agreement can take all of the guesswork out of those situations. You create it while everyone
-                is happy and looking out for each other. Deciding what rules are in place when something does go wrong gives you an objective
-                answer and removes emotion from the process.
-              </p>
+              Protect Your Sanity
+            </h2>
+            <div className="grid grid-cols-1 gap-4">
+              <div>
+                <a
+                  href="https://www.law.upenn.edu/clinic/entrepreneurship/startupkit/founders-agreement.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cursor-pointer rounded-lg text-lg font-bold text-indigo-800 transition-colors hover:underline dark:text-white"
+                >
+                  UPenn Founders Agreement Template
+                </a>
+                <p className="mt-2 font-light text-slate-800 dark:text-white">
+                  Unless you are a solo founder, you likely have others working
+                  on this project with you. If you are not already close to
+                  those people, you will be. You will spend so much time with
+                  your chosen team that they will be like family. While you may
+                  want to avoid discussing negative possibilities, it is
+                  important to get ahead of disputes and disagreements that will
+                  come in the future. Building a Founders or Operating agreement
+                  can take all of the guesswork out of those situations. You
+                  create it while everyone is happy and looking out for each
+                  other. Deciding what rules are in place when something does go
+                  wrong gives you an objective answer and removes emotion from
+                  the process.
+                </p>
+              </div>
+              <div>
+                <div className="rounded-lg text-lg font-bold text-indigo-800 transition-colors dark:text-white">
+                  Find or Form a Community
+                </div>
+                <p className="mt-2 font-light text-slate-800 dark:text-white">
+                  I don't have a link for this one because it will be different
+                  for each city and country. Starting a business can be a lonely
+                  endeavor. Even if you have cofounders in it with you, having a
+                  community of other people who understand the struggle will be
+                  wildy valuable. This can take many forms. Join a coworking
+                  space that has startups and entrepreneurs. Find out if your
+                  city has a slack/discord/in-person founders group that you
+                  could join. Apply for an accelerator program, like Techstars
+                  or Y-Combinator, where you can be part of a cohort and network
+                  of companies.
+                </p>
+                <p className="mt-2 font-light text-slate-800 dark:text-white">
+                  It is important to remember that these types of communities
+                  will have an allergic reaction to people who want to take
+                  whatever they can get and leave. Try to offer whatever help
+                  you can, even if you don't have any resources yet. Be a
+                  sounding board for a new idea. Give feedback on the alpha
+                  version of a new app. If you are technical, help resolve some
+                  terrible blocking issue another company is having. The
+                  relationships you form will end up being more fulfilling and
+                  supportive, out-weighing any short term benefit you may have
+                  gotten from asking for a connection and then bouncing.
+                </p>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>
