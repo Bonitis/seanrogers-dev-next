@@ -239,7 +239,7 @@ const HelloFounders: NextPage<{}> = () => {
                   Find or Form a Community
                 </div>
                 <p className="mt-2 font-light text-slate-800 dark:text-white">
-                  I don't have a link for this one because it will be different
+                  I don&apos;t have a link for this one because it will be different
                   for each city and country. Starting a business can be a lonely
                   endeavor. Even if you have cofounders in it with you, having a
                   community of other people who understand the struggle will be
@@ -254,7 +254,7 @@ const HelloFounders: NextPage<{}> = () => {
                   It is important to remember that these types of communities
                   will have an allergic reaction to people who want to take
                   whatever they can get and leave. Try to offer whatever help
-                  you can, even if you don't have any resources yet. Be a
+                  you can, even if you don&apos;t have any resources yet. Be a
                   sounding board for a new idea. Give feedback on the alpha
                   version of a new app. If you are technical, help resolve some
                   terrible blocking issue another company is having. The
