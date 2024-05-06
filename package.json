@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.2.2",
     "front-matter": "^4.0.2",
     "marked": "^4.0.12",
     "next": "^13.1.4",
