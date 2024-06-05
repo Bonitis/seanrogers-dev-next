@@ -43,7 +43,6 @@ const HelloFounders: NextPage<{}> = () => {
       body: JSON.stringify(data),
     })
     const json = await res.json()
-    form.reset()
     toast(json.message)
   }
 
@@ -170,10 +169,11 @@ const HelloFounders: NextPage<{}> = () => {
               )}
             />
             <button
+              disabled={form.formState.isSubmitting}
               type="submit"
-              className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-md border-2 border-solid border-slate-800 py-1 px-4 text-sm font-bold text-slate-800 transition-colors hover:bg-slate-800 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-800"
+              className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-md border-2 border-solid border-slate-800 py-1 px-4 text-sm font-bold text-slate-800 transition-colors hover:bg-slate-800 hover:text-white disabled:cursor-not-allowed disabled:border-slate-500 disabled:bg-slate-200 disabled:text-slate-500 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:disabled:border-slate-400 dark:disabled:text-slate-400 disabled:dark:hover:bg-slate-200"
             >
-              Submit
+              {form.formState.isSubmitting ? 'Sending...' : 'Submit'}
             </button>
           </form>
         </Form>
