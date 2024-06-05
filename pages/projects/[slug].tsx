@@ -73,7 +73,7 @@ const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
         </div>
         <hr className="border-t-1 mb-8 w-full border-solid border-slate-500" />
         <div
-          className="prose w-full lg:prose-xl"
+          className="prose w-full dark:prose-invert lg:prose-xl"
           dangerouslySetInnerHTML={{ __html: project.html }}
         />
         <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 xl:w-10/12 xl:max-w-5xl xl:grid-cols-3">
