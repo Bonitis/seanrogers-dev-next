@@ -102,81 +102,83 @@ const HelloFounders: NextPage<{}> = () => {
         </div>
       </div>
 
-      <div className="grid max-w-xl grid-cols-1 gap-4 md:mx-auto">
-        <p className="mt-2 text-2xl font-light dark:text-white">
-          Have an exciting new project in mind? Share the details with me, and
-          let&apos;s figure out how we can work together to bring your vision to
-          life.
-        </p>
-        <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="grid grid-cols-1 gap-4"
-          >
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Andy Hunt" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="andy@company.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="company"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Company</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Pragmatic Company" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="description"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Description</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="I have an ambitious new idea..."
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <button
-              disabled={form.formState.isSubmitting}
-              type="submit"
-              className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-md border-2 border-solid border-slate-800 py-1 px-4 text-sm font-bold text-slate-800 transition-colors hover:bg-slate-800 hover:text-white disabled:cursor-not-allowed disabled:border-slate-500 disabled:bg-slate-200 disabled:text-slate-500 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:disabled:border-slate-400 dark:disabled:text-slate-400 disabled:dark:hover:bg-slate-200"
+      <div className="mx-auto grid max-w-xl grid-cols-1 gap-4">
+        <div className="mx-8 grid grid-cols-1 gap-4">
+          <p className="mt-2 text-2xl font-light dark:text-white">
+            Have an exciting new project in mind? Share the details with me, and
+            let&apos;s figure out how we can work together to bring your vision
+            to life.
+          </p>
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="grid grid-cols-1 gap-4"
             >
-              {form.formState.isSubmitting ? 'Sending...' : 'Submit'}
-            </button>
-          </form>
-        </Form>
+              <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Andy Hunt" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="andy@company.com" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="company"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Company</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Pragmatic Company" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="description"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Description</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="I have an ambitious new idea..."
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <button
+                disabled={form.formState.isSubmitting}
+                type="submit"
+                className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-md border-2 border-solid border-slate-800 py-1 px-4 text-sm font-bold text-slate-800 transition-colors hover:bg-slate-800 hover:text-white disabled:cursor-not-allowed disabled:border-slate-500 disabled:bg-slate-200 disabled:text-slate-500 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:disabled:border-slate-400 dark:disabled:text-slate-400 disabled:dark:hover:bg-slate-200"
+              >
+                {form.formState.isSubmitting ? 'Sending...' : 'Submit'}
+              </button>
+            </form>
+          </Form>
+        </div>
       </div>
     </div>
   )
