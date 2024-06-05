@@ -5,7 +5,7 @@ description: Push the Pace is a real-time group fitness analytics platform with 
 stack: javascript | node | react | redux | firebase | raspberrypi | bluetooth
 thumbnail: push-the-pace-class
 gallery: ptp-workout-data, ptp-workout-setup, ptp-workout-complete
-sequence: 4
+sequence: 6
 ---
 
 Push the Pace was a fitness analytics platform which captured heart rate data from multiple users in a group workout and provided live statistics and a leaderboard. Unlike other technology out there today, this was not restricted by a specific type of workout. It could be used for a HIIT class, circuit training, crossfit, barre, yoga, or anything else. The key metric that we focused on was your effort score, which is based on where your current heart rate is on your personal scale from resting to max. This allows a participant to compare themselves to their classmates regardless of size, sex, and age.

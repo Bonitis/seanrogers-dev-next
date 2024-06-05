@@ -100,7 +100,7 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
                 </div>
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-lg border-4 border-solid border-indigo-800 py-2 px-16 text-lg font-bold text-indigo-800 transition-colors hover:bg-indigo-800 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-indigo-800 md:w-fit"
+                  className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-lg border-2 border-solid border-indigo-800 py-1 px-16 text-lg font-bold text-indigo-800 transition-colors hover:bg-indigo-800 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-indigo-800 md:w-fit"
                 >
                   Details
                 </Link>

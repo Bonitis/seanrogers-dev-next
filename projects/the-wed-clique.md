@@ -5,7 +5,7 @@ description: The Wed Clique is a platform for discovering and hiring wedding ven
 stack: typescript | node | react | sass | graphql | postgres
 thumbnail: the-wed-clique-home
 gallery: twc-vendor-gallery, twc-message-vendor
-sequence: 5
+sequence: 7
 ---
 
 The Wed Clique is a platform for discovering and hiring wedding vendors. It was built to give couples the power to find all of their vendors in one place, then hire and pay them. I joined the project as a contractor, initially set out to rework the react UI to be fully responsive, but shifted as the business model changed.

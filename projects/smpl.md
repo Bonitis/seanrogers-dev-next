@@ -5,7 +5,7 @@ description: smpl is a coworking space management platform that provides everyth
 stack: javascript | node | react | redux | materialui | firebase | stripe | zapier
 thumbnail: smpl-members
 gallery: smpl-profile, smpl-edit-resource, smpl-edit-plans
-sequence: 0
+sequence: 4
 ---
 
 smpl is a coworking space management platform that I built from the ground up alongside two cofounders, [Mike Bifulco](https://mikebifulco.com) and [Garrett Tichy](https://wearehygge.com). We bootstrapped the company and grew our customer base to thousands of users in 7 different countries. [smpl was acquired](https://thebusinesstimes.com/proximity-space-acquires-north-carolina-software-firm/) by [Proximity](https://www.proximity.space/) in 2020.

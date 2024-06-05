@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 import { Analytics } from '@vercel/analytics/react'
+import { Toaster } from '../src/components/Toaster'
 
 export const THEME_KEY = 'dark_mode'
 export enum Theme {
@@ -35,35 +36,43 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [theme])
 
   return (
-    <div className="relative bg-white transition-colors dark:bg-slate-900">
-      <nav className="mx-auto mb-8 flex h-16 w-10/12 max-w-5xl items-center justify-between py-4 text-slate-800 dark:text-white">
+    <div className="dark:bg-slate-900 relative bg-white transition-colors">
+      <nav className="dark:text-white mx-auto mb-8 flex h-16 w-10/12 max-w-5xl items-center justify-between py-4 text-slate-800">
         <Link
           href="/"
-          className="rounded p-1 hover:bg-slate-200 dark:hover:bg-slate-700"
+          className="dark:hover:bg-slate-700 rounded p-1 hover:bg-slate-200"
         >
           Home
         </Link>
-        <button
-          title={theme === Theme.LIGHT ? 'dark mode' : 'light mode'}
-          className="rounded p-1 hover:bg-slate-200 dark:hover:bg-slate-700"
-          onClick={handleTheme}
-        >
-          <div
-            className="dark:invert"
-            style={{
-              backgroundImage: `url(${
-                theme === Theme.LIGHT
-                  ? '/assets/icons/darkmode.svg'
-                  : '/assets/icons/lightmode.svg'
-              })`,
-              height: '24px',
-              width: '24px',
-            }}
-          />
-        </button>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/hire-me"
+            className="dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-800 flex w-fit cursor-pointer items-center justify-center rounded-md border-2 border-solid border-slate-800 py-1 px-4 text-sm font-bold text-slate-800 transition-colors hover:bg-slate-800 hover:text-white"
+          >
+            Hire Me!
+          </Link>
+          <button
+            title={theme === Theme.LIGHT ? 'dark mode' : 'light mode'}
+            className="dark:hover:bg-slate-700 rounded p-1 hover:bg-slate-200"
+            onClick={handleTheme}
+          >
+            <div
+              className="dark:invert"
+              style={{
+                backgroundImage: `url(${
+                  theme === Theme.LIGHT
+                    ? '/assets/icons/darkmode.svg'
+                    : '/assets/icons/lightmode.svg'
+                })`,
+                height: '24px',
+                width: '24px',
+              }}
+            />
+          </button>
+        </div>
       </nav>
       <Component {...pageProps} />
-      <footer className="mx-auto mt-16 w-10/12 max-w-5xl py-12 text-slate-800 dark:text-white">
+      <footer className="dark:text-white mx-auto mt-16 w-10/12 max-w-5xl py-12 text-slate-800">
         <div className="flex flex-col items-center justify-between md:flex-row md:p-0">
           <div>&copy;{` ${new Date().getFullYear()} Sean Rogers `}</div>
           <div className="flex">
@@ -72,7 +81,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               aria-label="@bonitis on github"
               target="_blank"
               rel="noreferrer"
-              className="m-2 h-10 rounded p-1 hover:bg-slate-200 dark:hover:bg-slate-700"
+              className="dark:hover:bg-slate-700 m-2 h-10 rounded p-1 hover:bg-slate-200"
             >
               <Image
                 src={
@@ -95,7 +104,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               aria-label="Sean Rogers linkedin profile"
               target="_blank"
               rel="noreferrer"
-              className="m-2 h-10 rounded p-1 hover:bg-slate-200 dark:hover:bg-slate-700"
+              className="dark:hover:bg-slate-700 m-2 h-10 rounded p-1 hover:bg-slate-200"
             >
               <Image
                 src="/assets/social/linkedin.png"
@@ -114,7 +123,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               aria-label="@helloseann on twitter"
               target="_blank"
               rel="noreferrer"
-              className="m-2 h-10 rounded p-1 hover:bg-slate-200 dark:hover:bg-slate-700"
+              className="dark:hover:bg-slate-700 m-2 h-10 rounded p-1 hover:bg-slate-200"
             >
               <Image
                 src="/assets/social/twitter.png"
@@ -132,6 +141,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
       </footer>
       <Analytics />
+      <Toaster />
     </div>
   )
 }

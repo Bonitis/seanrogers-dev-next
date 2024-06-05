@@ -4,7 +4,7 @@ slug: ekos-boost
 description: Ekos helps craft beverage makers streamline inventory, production, sales, and accounting with one affordable business management software.
 stack: typescript | react | webpack | sass | dotnet
 thumbnail: ekos-boost-home
-gallery: boost-detail, boost-order-edit
+gallery: boost-detail, boost-order-edit, ekos-boost-pricelist, ekos-boost-fermentation, ekos-boost-sales-forecasting
 sequence: 2
 ---
 

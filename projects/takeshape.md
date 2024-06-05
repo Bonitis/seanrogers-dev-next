@@ -5,7 +5,7 @@ description: TakeShape is an api mesh which allows you to combine common service
 stack: typescript | node | react | redux | materialui | graphql | lambda | dynamodb
 thumbnail: takeshape-api-explorer
 gallery: takeshape-edit-content, takeshape-version-control
-sequence: 3
+sequence: 5
 ---
 
 TakeShape is an api mesh for the [Jamstack](https://jamstack.org/) allowing you to configure a hosted graphql api that combines all of your services and data into a single endpoint. I joined TakeShape right after the two founders, Mark and Andrew, had been accepted into the [Techstars Philadelphia](https://www.techstars.com/accelerators/comcast) accelerator program. The three of us moved to Philly for three months with the goals of getting an MVP of the mesh product released, and raising a round of funding.
