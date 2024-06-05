@@ -49,9 +49,7 @@ const HelloFounders: NextPage<{}> = () => {
   return (
     <div>
       <Head>
-        <title>
-          Helping you survive starting your first company or joining a startup
-        </title>
+        <title>{TITLE}</title>
         <meta name="description" content={DESCRIPTION} />
         <meta
           name="keywords"
