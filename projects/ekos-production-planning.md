@@ -1,7 +1,7 @@
 ---
 title: Ekos Production Planning
 slug: ekos-production-planning
-description: Brewers use Ekos to plan their brewing schedules and treat an empty fermenter as lost revenue. Easy drag-and-drop helped streamline their planning process.
+description: Brewers use Ekos to plan their brewing schedules and treat an empty fermenter as lost revenue. Easy drag-and-drop scheduling helped streamline their planning process.
 stack: typescript | react | webpack | styledcomponents | reactdnd | dotnet
 thumbnail: ekos-production-planner
 gallery: ekos-production-planner, ekos-planning-detail
