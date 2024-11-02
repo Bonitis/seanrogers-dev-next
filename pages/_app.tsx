@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { Toaster } from '../src/components/Toaster'
+import BlueSkyIcon from '../src/components/icons/BlueSky'
 
 export const THEME_KEY = 'dark_mode'
 export enum Theme {
@@ -125,17 +126,9 @@ function MyApp({ Component, pageProps }: AppProps) {
               rel="noreferrer me"
               className="dark:hover:bg-slate-700 m-2 h-10 rounded p-1 hover:bg-slate-200"
             >
-              <Image
-                src="/assets/social/bluesky.svg"
-                alt="bluesky-logo"
-                height={32}
-                width={32}
-                sizes="100vw"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
-              />
+              <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
+              <BlueSkyIcon />
+              </div>
             </a>
           </div>
         </div>
