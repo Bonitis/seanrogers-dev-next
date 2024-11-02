@@ -80,7 +80,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               href="https://github.com/Bonitis"
               aria-label="@bonitis on github"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer me"
               className="dark:hover:bg-slate-700 m-2 h-10 rounded p-1 hover:bg-slate-200"
             >
               <Image
@@ -103,7 +103,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               href="https://www.linkedin.com/in/smrogers/"
               aria-label="Sean Rogers linkedin profile"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer me"
               className="dark:hover:bg-slate-700 m-2 h-10 rounded p-1 hover:bg-slate-200"
             >
               <Image
@@ -119,15 +119,15 @@ function MyApp({ Component, pageProps }: AppProps) {
               />
             </a>
             <a
-              href="https://twitter.com/helloseann"
-              aria-label="@helloseann on twitter"
+              href="https://bsky.app/profile/hellosean.bsky.social"
+              aria-label="Sean Rogers Bluesky profile"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer me"
               className="dark:hover:bg-slate-700 m-2 h-10 rounded p-1 hover:bg-slate-200"
             >
               <Image
-                src="/assets/social/twitter.png"
-                alt="twitter-logo"
+                src="/assets/social/bluesky.svg"
+                alt="bluesky-logo"
                 height={32}
                 width={32}
                 sizes="100vw"
