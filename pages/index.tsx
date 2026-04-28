@@ -40,7 +40,7 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
         <meta property="og:description" content={DESCRIPTION} />
         <meta
           property="og:image"
-          content={siteUrlFor('/assets/aiavatar.png')}
+          content={siteUrlFor('/assets/aiavatar.jpg')}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="seanrogers.dev" />
@@ -49,7 +49,7 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta
           name="twitter:image"
-          content={siteUrlFor('/assets/aiavatar.png')}
+          content={siteUrlFor('/assets/aiavatar.jpg')}
         ></meta>
       </Head>
 

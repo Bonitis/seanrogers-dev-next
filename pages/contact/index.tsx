@@ -74,7 +74,7 @@ const Contact: NextPage<{}> = () => {
         <meta property="og:description" content={DESCRIPTION} />
         <meta
           property="og:image"
-          content={siteUrlFor('/assets/aiavatar.png')}
+          content={siteUrlFor('/assets/aiavatar.jpg')}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="seanrogers.dev" />
@@ -83,7 +83,7 @@ const Contact: NextPage<{}> = () => {
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta
           name="twitter:image"
-          content={siteUrlFor('/assets/aiavatar.png')}
+          content={siteUrlFor('/assets/aiavatar.jpg')}
         ></meta>
       </Head>
 
