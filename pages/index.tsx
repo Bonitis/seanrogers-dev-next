@@ -5,11 +5,13 @@ import Link from 'next/link'
 import path from 'path'
 import parseFrontMatter from 'front-matter'
 import { promises as fs } from 'fs'
-import StackLogos from '../src/components/StackLogos'
+import StackLogos from '@/components/StackLogos'
+import { Button } from '@/components/ui/button'
+import { siteUrl, siteUrlFor } from '@/lib/site'
 import {
   ProjectMarkdownAttributes,
   ProjectPage,
-} from '../src/interfaces/project'
+} from '@/interfaces/project'
 import { getStackLogos } from './projects/[slug]'
 import avatar from '../public/assets/aiavatar.jpg'
 
@@ -31,23 +33,23 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
           content="Javascript,Typescript,React,Redux,Node,Nextjs,Graphql,Firebase,Stripe,Vercel,Dotnet,Azure,AWS,Lambda"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://seanrogers.dev" />
-        <meta property="og:url" content="https://seanrogers.dev/" />
+        <link rel="canonical" href={siteUrl} />
+        <meta property="og:url" content={siteUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Sean Rogers" />
         <meta property="og:description" content={DESCRIPTION} />
         <meta
           property="og:image"
-          content="https://seanrogers.dev/assets/aiavatar.png"
+          content={siteUrlFor('/assets/aiavatar.png')}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="seanrogers.dev" />
-        <meta property="twitter:url" content="https://seanrogers.dev/" />
+        <meta property="twitter:url" content={siteUrl} />
         <meta name="twitter:title" content="Sean Rogers" />
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta
           name="twitter:image"
-          content="https://seanrogers.dev/assets/aiavatar.png"
+          content={siteUrlFor('/assets/aiavatar.png')}
         ></meta>
       </Head>
 
@@ -98,12 +100,13 @@ const Home: NextPage<{ projects: ProjectPage[] }> = ({ projects }) => {
                     <StackLogos logos={project.logos} size={30} />
                   </div>
                 </div>
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-lg border-2 border-solid border-indigo-800 py-1 px-16 text-lg font-bold text-indigo-800 transition-colors hover:bg-indigo-800 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-indigo-800 md:w-fit"
+                <Button
+                  asChild
+                  variant="outline"
+                  className="mt-4 w-full rounded-lg border-2 border-indigo-800 bg-transparent px-16 py-1 text-lg font-bold text-indigo-800 hover:bg-indigo-800 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-indigo-800 md:w-fit"
                 >
-                  Details
-                </Link>
+                  <Link href={`/projects/${project.slug}`}>Details</Link>
+                </Button>
               </div>
               <div className="h-36 w-full overflow-hidden rounded-lg bg-slate-100 p-4 dark:bg-slate-700 sm:h-60 md:h-80 lg:h-72 lg:w-8/12 lg:px-8 lg:pb-0 lg:pt-8">
                 <Image

@@ -1,5 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
+import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'sonner'
+
 import {
   Form,
   FormControl,
@@ -7,29 +13,33 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../../src/components/Form'
-import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { toast } from 'sonner'
-import { Input } from '../../src/components/Input'
+} from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
+import { siteUrlFor } from '@/lib/site'
 import avatar from '../../public/assets/aiavatar.jpg'
-import Image from 'next/image'
 
 const schema = z.object({
-  name: z.string().min(1),
-  email: z.string().email().min(1),
-  company: z.string().min(1),
-  description: z.string().min(1),
+  name: z.string().min(1, 'Name is required'),
+  email: z.string().email('Enter a valid email'),
+  company: z.string().optional(),
+  description: z.string().min(1, 'Tell me a bit about why you’re reaching out'),
 })
 
-const TITLE = 'Lets build something amazing 🧑‍💻'
+const TITLE = 'Get in Touch'
 const DESCRIPTION =
-  "I can help you launch an MVP, build your next big feature, or re-platform your existing application. Let's turn your ideas into reality."
+  'Want to chat about a project, an idea, or just say hi? Drop me a line and I’ll get back to you.'
 
-const HelloFounders: NextPage<{}> = () => {
+const Contact: NextPage<{}> = () => {
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
+    defaultValues: {
+      name: '',
+      email: '',
+      company: '',
+      description: '',
+    },
   })
 
   const onSubmit = async (data: z.infer<typeof schema>) => {
@@ -44,6 +54,7 @@ const HelloFounders: NextPage<{}> = () => {
     })
     const json = await res.json()
     toast(json.message)
+    if (res.ok) form.reset()
   }
 
   return (
@@ -53,26 +64,26 @@ const HelloFounders: NextPage<{}> = () => {
         <meta name="description" content={DESCRIPTION} />
         <meta
           name="keywords"
-          content="MVP, startup, founder, software engineer, react, redux, node, nextjs, graphql, firebase, stripe, vercel, dotnet, azure, aws, lambda"
+          content="contact, get in touch, software engineer, react, nextjs, typescript"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://seanrogers.dev/hire-me" />
-        <meta property="og:url" content="https://seanrogers.dev/hire-me" />
+        <link rel="canonical" href={siteUrlFor('/contact')} />
+        <meta property="og:url" content={siteUrlFor('/contact')} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={TITLE} />
         <meta property="og:description" content={DESCRIPTION} />
         <meta
           property="og:image"
-          content="https://seanrogers.dev/assets/aiavatar.png"
+          content={siteUrlFor('/assets/aiavatar.png')}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="seanrogers.dev" />
-        <meta property="twitter:url" content="https://seanrogers.dev/hire-me" />
+        <meta property="twitter:url" content={siteUrlFor('/contact')} />
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESCRIPTION} />
         <meta
           name="twitter:image"
-          content="https://seanrogers.dev/assets/aiavatar.png"
+          content={siteUrlFor('/assets/aiavatar.png')}
         ></meta>
       </Head>
 
@@ -103,9 +114,8 @@ const HelloFounders: NextPage<{}> = () => {
       <div className="mx-auto grid max-w-xl grid-cols-1 gap-4">
         <div className="mx-8 grid grid-cols-1 gap-4">
           <p className="mt-2 text-2xl font-light dark:text-white">
-            Have an exciting new project in mind? Share the details with me, and
-            let&apos;s figure out how we can work together to bring your vision
-            to life.
+            Have a question, an idea, or a kind word? Send it over and I&apos;ll
+            be in touch.
           </p>
           <Form {...form}>
             <form
@@ -132,7 +142,11 @@ const HelloFounders: NextPage<{}> = () => {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="andy@company.com" {...field} />
+                      <Input
+                        type="email"
+                        placeholder="andy@company.com"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -143,7 +157,7 @@ const HelloFounders: NextPage<{}> = () => {
                 name="company"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Company</FormLabel>
+                    <FormLabel>Company (optional)</FormLabel>
                     <FormControl>
                       <Input placeholder="Pragmatic Company" {...field} />
                     </FormControl>
@@ -156,10 +170,11 @@ const HelloFounders: NextPage<{}> = () => {
                 name="description"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Description</FormLabel>
+                    <FormLabel>Message</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="I have an ambitious new idea..."
+                      <Textarea
+                        rows={5}
+                        placeholder="Tell me what's on your mind..."
                         {...field}
                       />
                     </FormControl>
@@ -167,13 +182,14 @@ const HelloFounders: NextPage<{}> = () => {
                   </FormItem>
                 )}
               />
-              <button
-                disabled={form.formState.isSubmitting}
+              <Button
                 type="submit"
-                className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-md border-2 border-solid border-slate-800 py-1 px-4 text-sm font-bold text-slate-800 transition-colors hover:bg-slate-800 hover:text-white disabled:cursor-not-allowed disabled:border-slate-500 disabled:bg-slate-200 disabled:text-slate-500 dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-800 dark:disabled:border-slate-400 dark:disabled:text-slate-400 disabled:dark:hover:bg-slate-200"
+                disabled={form.formState.isSubmitting}
+                variant="outline"
+                className="mt-4 w-full border-2 border-slate-800 py-1 px-4 text-sm font-bold text-slate-800 hover:bg-slate-800 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-slate-800"
               >
-                {form.formState.isSubmitting ? 'Sending...' : 'Submit'}
-              </button>
+                {form.formState.isSubmitting ? 'Sending...' : 'Send Message'}
+              </Button>
             </form>
           </Form>
         </div>
@@ -182,4 +198,4 @@ const HelloFounders: NextPage<{}> = () => {
   )
 }
 
-export default HelloFounders
+export default Contact

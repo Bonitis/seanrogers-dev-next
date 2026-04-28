@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { NextPage, GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -5,50 +6,63 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import parseFrontMatter from 'front-matter'
 import { marked } from 'marked'
-import StackLogos from '../../src/components/StackLogos'
+
+import StackLogos from '@/components/StackLogos'
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from '@/components/ui/dialog'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel'
+import { siteUrlFor } from '@/lib/site'
 import {
   ProjectMarkdownAttributes,
   ProjectPage,
-} from '../../src/interfaces/project'
+} from '@/interfaces/project'
 
 export const getStackLogos = (stack: string): string[] => {
   return stack.split(' | ').map((name) => `${name}`)
 }
 
 const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const gallery = project.gallery ?? []
+  const isOpen = openIndex !== null
+  const projectUrl = siteUrlFor(`/projects/${project.slug}`)
+  const thumbnailUrl = siteUrlFor(
+    `/assets/screenshots/${project.thumbnail}.png`
+  )
+
   return (
     <>
       <Head>
         <title>{`${project.title} - Sean Rogers dev portfolio`}</title>
         <meta name="description" content={project.description} />
         <meta name="keywords" content={project.stack.split(' | ').join(',')} />
-        <link
-          rel="canonical"
-          href={`https://seanrogers.dev/projects/${project.slug}`}
-        />
-        <meta property="og:url" content="https://seanrogers.dev/" />
-        <meta property="og:type" content="website" />
+        <link rel="canonical" href={projectUrl} />
+        <meta property="og:url" content={projectUrl} />
+        <meta property="og:type" content="article" />
         <meta
           property="og:title"
           content={`${project.title} - Sean Rogers dev portfolio`}
         />
         <meta property="og:description" content={project.description} />
-        <meta
-          property="og:image"
-          content={`https://seanrogers.dev/assets/screenshots/${project.thumbnail}.png`}
-        />
+        <meta property="og:image" content={thumbnailUrl} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="seanrogers.dev" />
-        <meta property="twitter:url" content="https://seanrogers.dev/" />
+        <meta property="twitter:url" content={projectUrl} />
         <meta
           name="twitter:title"
           content={`${project.title} - Sean Rogers dev portfolio`}
         />
         <meta name="twitter:description" content={project.description} />
-        <meta
-          name="twitter:image"
-          content={`https://seanrogers.dev/assets/screenshots/${project.thumbnail}.png`}
-        ></meta>
+        <meta name="twitter:image" content={thumbnailUrl}></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -76,58 +90,75 @@ const ProjectSlug: NextPage<{ project: ProjectPage }> = ({ project }) => {
           className="prose w-full dark:prose-invert lg:prose-xl"
           dangerouslySetInnerHTML={{ __html: project.html }}
         />
-        <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 xl:w-10/12 xl:max-w-5xl xl:grid-cols-3">
-          {project.gallery?.map((path) => (
-            <a
-              href={`#${path}`}
-              key={path}
-              className="cursor-zoom-in rounded bg-gray-200 p-2 hover:drop-shadow-lg"
-            >
-              <Image
-                src={`/assets/screenshots/${path}.png`}
-                alt={path}
-                height={400}
-                width={600}
-                sizes="100vw"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  objectFit: 'cover',
-                }}
-              />
-            </a>
-          ))}
-        </div>
-        <div>
-          {project.gallery?.map((path) => (
-            <div
-              key={`lightbox-${path}`}
-              className="fixed bottom-0 left-0 right-0 z-20 flex h-0 items-center justify-center bg-black bg-opacity-80 transition-all target:h-screen target:w-screen target:overflow-auto"
-              id={path}
-            >
-              <a
-                href="#_"
-                className="absolute right-0 top-0 z-30 p-2 text-3xl font-bold text-white"
-              >
-                &times;
-              </a>
-              <div className="m-auto block w-4/5">
-                <Image
-                  src={`/assets/screenshots/${path}.png`}
-                  alt={path}
-                  height={400}
-                  width={600}
-                  sizes="100vw"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    objectFit: 'contain',
-                  }}
-                />
-              </div>
+        {gallery.length > 0 && (
+          <>
+            <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 xl:w-10/12 xl:max-w-5xl xl:grid-cols-3">
+              {gallery.map((imagePath, index) => (
+                <button
+                  key={imagePath}
+                  type="button"
+                  aria-label={`View ${imagePath} full size`}
+                  onClick={() => setOpenIndex(index)}
+                  className="cursor-zoom-in rounded bg-gray-200 p-2 transition hover:drop-shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <Image
+                    src={`/assets/screenshots/${imagePath}.png`}
+                    alt={imagePath}
+                    height={400}
+                    width={600}
+                    sizes="100vw"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      objectFit: 'cover',
+                    }}
+                  />
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
+
+            <Dialog
+              open={isOpen}
+              onOpenChange={(open) => !open && setOpenIndex(null)}
+            >
+              <DialogContent className="max-w-[95vw] border-none bg-transparent p-0 shadow-none sm:max-w-5xl">
+                <DialogTitle className="sr-only">
+                  {project.title} gallery
+                </DialogTitle>
+                {isOpen && (
+                  <Carousel
+                    opts={{ startIndex: openIndex ?? 0, loop: true }}
+                    className="w-full"
+                  >
+                    <CarouselContent>
+                      {gallery.map((imagePath) => (
+                        <CarouselItem key={imagePath}>
+                          <div className="flex items-center justify-center">
+                            <Image
+                              src={`/assets/screenshots/${imagePath}.png`}
+                              alt={imagePath}
+                              height={1200}
+                              width={1800}
+                              sizes="95vw"
+                              style={{
+                                width: '100%',
+                                height: 'auto',
+                                maxHeight: '85vh',
+                                objectFit: 'contain',
+                              }}
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2 bg-white/90 text-slate-900 hover:bg-white sm:-left-12" />
+                    <CarouselNext className="right-2 bg-white/90 text-slate-900 hover:bg-white sm:-right-12" />
+                  </Carousel>
+                )}
+              </DialogContent>
+            </Dialog>
+          </>
+        )}
       </div>
     </>
   )

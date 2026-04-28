@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_API_KEY)
 export type EmailRequest = {
   email: string
   name: string
-  company: string
+  company?: string
   description: string
 }
 
@@ -14,20 +14,32 @@ export type EmailResponse = {
   message: string
 }
 
+const escapeHtml = (s: string) =>
+  s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+
 const sendEmail = async (req: NextApiRequest, res: NextApiResponse) => {
   const body = req.body as EmailRequest
+
+  const companyLine = body.company
+    ? `<li><strong>Company: </strong>${escapeHtml(body.company)}</li>`
+    : ''
 
   const emailres = await resend.emails.send({
     from: 'hello@seanrogers.dev',
     to: 'hello@seanrogers.dev',
-    subject: `${body.name} wants to hire you!`,
+    subject: `New message from ${body.name}`,
     html: `<div>
-      <p>${body.name} wants to hire you!</p>
+      <p>${escapeHtml(body.name)} sent you a message via seanrogers.dev:</p>
       <ul>
-        <li><strong>Name: </strong>${body.name}</li>
-        <li><strong>email: </strong>${body.email}</li>
-        <li><strong>Company: </strong>${body.company}</li>
-        <li><strong>Description: </strong>${body.description}</li>
+        <li><strong>Name: </strong>${escapeHtml(body.name)}</li>
+        <li><strong>Email: </strong>${escapeHtml(body.email)}</li>
+        ${companyLine}
+        <li><strong>Message: </strong>${escapeHtml(body.description)}</li>
       </ul>
     </div>`,
   })
