@@ -71,6 +71,38 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            // Drop the default backtick pseudo-elements around <code>
+            'code::before': { content: '""' },
+            'code::after': { content: '""' },
+            code: {
+              backgroundColor: theme('colors.slate.100'),
+              color: theme('colors.slate.800'),
+              padding: '0.15em 0.4em',
+              borderRadius: '4px',
+              fontWeight: '500',
+              fontSize: '0.92em',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+              padding: 0,
+              fontWeight: 'inherit',
+              fontSize: 'inherit',
+            },
+          },
+        },
+        invert: {
+          css: {
+            code: {
+              backgroundColor: theme('colors.slate.800'),
+              color: theme('colors.slate.100'),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],

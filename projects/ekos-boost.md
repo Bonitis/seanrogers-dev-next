@@ -5,7 +5,7 @@ description: Ekos helps craft beverage makers streamline inventory, production, 
 stack: typescript | react | webpack | sass | dotnet
 thumbnail: ekos-boost-home
 gallery: boost-detail, boost-order-edit, ekos-boost-pricelist, ekos-boost-fermentation, ekos-boost-sales-forecasting
-sequence: 2
+sequence: 3
 ---
 
 Boost is now the core [Ekos](https://goekos.com) platform, which allows craft producers to streamline their inventory, production, sales, and accounting processes. The original codebase was written as a full-stack ASP.NET application with server rendered pages based on a custom markup syntax. As new features became increasingly complex, the need to split the business logic from the UI became apparent. The backend is now served as a .NET REST api and the UI is a React application built off of a create-react-app base.

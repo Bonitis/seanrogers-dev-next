@@ -5,7 +5,7 @@ description: Yeast is the most important ingredient in beer production. Tracking
 stack: typescript | react | webpack | styledcomponents | dotnet
 thumbnail: ekos-yeast-management
 gallery: ekos-yeast-management, ekos-yeast-list, ekos-yeast-vertical
-sequence: 1
+sequence: 2
 ---
 
 Yeast is the most important ingredient in alcohol production and can often be the most expensive. To mitigate these costs, breweries harvest, propagate, and re-pitch yeast from batch to batch. It is also a fragile ingredient. Factors such as temperature, pH, oxygen levels, and contaminants can cause the yeast to perform poorly, leading to off-flavors in the beer. Therefore, it is crucial for brewers to track these metrics, along with the cell count and viability of the yeast, to ensure it produces the best product.

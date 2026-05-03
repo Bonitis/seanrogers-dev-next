@@ -5,7 +5,7 @@ description: Brewers use Ekos to plan their brewing schedules and treat an empty
 stack: typescript | react | webpack | styledcomponents | reactdnd | dotnet
 thumbnail: ekos-production-planner
 gallery: ekos-production-planner, ekos-planning-detail
-sequence: 0
+sequence: 1
 ---
 
 Production planning is crucial for the operations team at a brewery. An empty fermenter represents lost revenue—it is equipment that could be producing more beer to sell. The goal of this project was to provide a clear, powerful view of the production schedule, allowing brewers to manage their plans on the fly to match production capacity and sales forecasts.
